@@ -11,11 +11,11 @@
 <div class="container">
 <h2>Users</h2>
 
-<ul>
-    <% results.forEach(function(r) { %>
-        <li><%= r.id %> - <%= r.name %></li>
-    <% }); %>
-</ul>
+    <ul>
+        <% userResult.forEach(function(r) { %>
+        <li><%= r.name %> - <%= r.domain %></li>
+        <% }); %>
+    </ul>
 
 </div>
 
