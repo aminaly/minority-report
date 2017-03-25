@@ -36,7 +36,7 @@ app.get('/db', function (request, response) {
 
     var userResult = pgquery(userquery);
     var companyResult = pgquery(companyquery);
-    print(userResult);
+    console.log(userResult);
     response.render('pages/db', {userDom: userResult, companyDom : companyResult});
 });
 
