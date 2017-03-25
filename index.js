@@ -18,10 +18,6 @@ app.set('view engine', 'ejs');
 
 // index node
 app.get('/', function(request, response) {
-  response.render('pages/index');
-});
-
-app.get('/signup', function(request, response) {
   response.render('pages/user-signup');
 });
 
