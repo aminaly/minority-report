@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style> div.card {
-    background-color: lightgrey;
-    color: black;
-    } </style>
-
     <% include ../partials/header.ejs %>
 </head>
-<body>
-    <% include ../partials/nav.ejs %>
 
-    <div class="card">
-        <p>There should be something here. </p>
-    </div>
+<body>
+
+<% include ../partials/nav.ejs %>
+
+<div class="container">
+    <h2>User-Company Domain Matches</h2>
+
+    <ul>
+        <% results.forEach(function(r) { %>
+        <li><%= r.id %> - <%= r.name %></li>
+        <% }); %>
+    </ul>
+
+</div>
+
 </body>
 </html>
