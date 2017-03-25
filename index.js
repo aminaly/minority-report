@@ -36,8 +36,9 @@ app.get('/db', function (request, response) {
     var companyquery = 'SELECT id, domain FROM companies';
 
     var userResult = pgquery(userquery);
-    var companyResult = pgquery(companyquery);
     console.log("User Result: " + userResult);
+    console.log("Direct log: " + pgquery(userquery));
+    var companyResult = pgquery(companyquery);
     response.render('pages/db', {userDom: userResult, companyDom : companyResult});
 });
 
@@ -49,7 +50,8 @@ function pgquery(querystring) {
             if (err)
             { console.error(err); response.send("Error " + err); }
             else
-            { return result; }
+            { console.log("Log within function: " + result.rows);
+            return result.rows; }
         });
     });
 }
