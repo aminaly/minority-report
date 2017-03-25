@@ -31,12 +31,12 @@ app.listen(app.get('port'), function() {
 // db page. Get's data from test table
 app.get('/db', function (request, response) {
 
-    var userquery = 'SELECT * FROM users JOIN domain ON users.id = domain.user WHERE users.id = ' + userid;
+    var userquery = 'SELECT * FROM users JOIN domain ON users.id = domain.user WHERE users.id = 1';
     var companyquery = 'SELECT id, domain FROM companies';
 
     var userResult = pgquery(userquery);
     var companyResult = pgquery(companyquery);
-    console.log(userResult);
+    console.log("User Result: " + userResult);
     response.render('pages/db', {userDom: userResult, companyDom : companyResult});
 });
 
