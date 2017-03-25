@@ -1,5 +1,5 @@
 var express = require('express');
-var indico = require('indico.io');
+//var indico = require('indico.io');
 var pg = require('pg');
 var app = express();
 
@@ -38,12 +38,11 @@ app.get('/db', function (request, response) {
             if (err)
             { console.error(err); response.send("Error " + err); }
             else
-            {// indico.sentiment(['indico is so easy to use!', 'Still really easy, yiss'], settings)
-               // .then(response)
-                //.catch(logError);
-            response.render('pages/db', {results: result.rows} ); }
+            { response.render('pages/db', {results: result.rows} ); }
         });
     });
 });
 
-
+// indico.sentiment(['indico is so easy to use!', 'Still really easy, yiss'], settings)
+// .then(response)
+//.catch(logError);
