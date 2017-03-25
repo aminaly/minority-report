@@ -49,8 +49,7 @@ function pgquery(querystring) {
             if (err)
             { console.error(err); response.send("Error " + err); }
             else
-            { console.log(result.rows);
-                return(result.rows); }
+            { return result.rows; }
         });
     });
 }
