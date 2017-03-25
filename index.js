@@ -21,7 +21,8 @@ app.set('view engine', 'ejs');
 
 // index node
 app.get('/', function(request, response) {
-  response.render('pages/user-signup');
+    console.log("Signup print");
+    response.render('pages/user-signup');
 });
 
 app.listen(app.get('port'), function() {
