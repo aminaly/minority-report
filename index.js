@@ -29,7 +29,7 @@ app.listen(app.get('port'), function() {
 app.get('/db', function (request, response) {
 
     var connectionString = process.env.DATABASE_URL
-        || "postgres://localhost:5432/cs3200";
+        || "postgres://localhost:5432/mr";
 
 
     pg.connect(connectionString, function(err, client, done) {
