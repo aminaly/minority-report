@@ -44,7 +44,7 @@ app.get('/db', function (request, response) {
 
 // call query
 function pgquery(querystring) {
-    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    var x = pg.connect(process.env.DATABASE_URL, function(err, client, done) {
         client.query(querystring, function(err, result) {
             done();
             if (err)
@@ -54,4 +54,6 @@ function pgquery(querystring) {
             return result.rows; }
         });
     });
+
+    console.log("This is x: " + x);
 }
