@@ -39,7 +39,7 @@ app.get('/db', function (request, response) {
             if(err)
             {console.error(err); response.sent("Error " + err); }
             else
-            { response.render('pages/db', {results: result.rows} ); }
+            { response.render('pages/db', {userDom: result.rows} ); }
         });
     });
 });
