@@ -25,16 +25,16 @@ app.get('/', function(request, response) {
     response.render('pages/user-signup');
 });
 
-app.get('/recommendations', function(request, response) {
-    console.log("Signup print");
-    response.render('pages/db');
-});
+// app.get('/recommendations', function(request, response) {
+//     console.log("Signup print");
+//     response.render('pages/db');
+// });
 
 app.listen(app.get('port'), function() {
 });
 
 // db page. Get's data from test table
-app.get('/db', function (request, response) {
+app.get('/recommendations', function (request, response) {
 
     var userquery = 'SELECT * FROM users JOIN domain ON users.id = domain.user WHERE users.id = ' + userid;
 
