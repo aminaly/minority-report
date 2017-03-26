@@ -1,11 +1,11 @@
 var express = require('express');
-//var indico = require('indico.io');
+var indico = require('indico.io');
 var pg = require('pg');
 var app = express();
 
-//indico.apiKey =  '40bbea36abfef1d67b3a7befb0bf6c7c';
-var response = function(res) { console.log(res); }
-var logError = function(err) { console.log(err); }
+indico.apiKey =  '40bbea36abfef1d67b3a7befb0bf6c7c';
+var response = function(res) { console.log(res); };
+var logError = function(err) { console.log(err); };
 
 // operating as if first user is logged in
 var userid = 1;
@@ -28,11 +28,6 @@ app.get('/', function(request, response) {
 app.listen(app.get('port'), function() {
 });
 
-// call query
-function pgquery(querystring, page) {
-
-}
-
 // db page. Get's data from test table
 app.get('/db', function (request, response) {
 
@@ -48,8 +43,10 @@ app.get('/db', function (request, response) {
         });
     });
 });
-    //var companyquery = 'SELECT id, domain FROM companies';
-    //pgquery(userquery, 'pages/db');
+
+
+//var companyquery = 'SELECT id, domain FROM companies';
+//pgquery(userquery, 'pages/db');
 
 
 
