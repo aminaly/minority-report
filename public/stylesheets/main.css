@@ -2,6 +2,10 @@ body {
     font-family: "Helvetica";
 }
 
+.a {
+    text-color: #532F8C;
+}
+
 .jumbotron {
   background: #532F8C;
   padding-bottom: 80px;
