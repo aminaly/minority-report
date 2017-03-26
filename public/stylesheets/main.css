@@ -2,10 +2,6 @@ body {
     font-family: "Helvetica";
 }
 
-a:link {
-    text-color: #532F8C;
-}
-
 .jumbotron {
   background: #532F8C;
   padding-bottom: 80px;
@@ -80,6 +76,7 @@ label {
 .btn {
   border-color: #532F8C;
   border-width:1px;
+  text-color: black;
 }
 
 .card-img-top {
