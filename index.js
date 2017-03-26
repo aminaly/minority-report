@@ -28,14 +28,6 @@ app.get('/', function(request, response) {
 app.listen(app.get('port'), function() {
 });
 
-$.post(
-                'https://apiv2.indico.io/relevance/batch',
-                JSON.stringify({
-                'api_key': "40bbea36abfef1d67b3a7befb0bf6c7c",
-                'data': result.rows['domain'],
-                'queries': ["Media"]
-                })).then(function(res) { console.log("res: " + res) });
-
 // db page. Get's data from test table
 app.get('/db', function (request, response) {
 
