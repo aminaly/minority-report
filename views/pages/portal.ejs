@@ -13,9 +13,9 @@
         <div class="col-md-3 col-md-offset-1"> 
             <img src="http://ninnescahlife.wichita.edu/sites/default/files/private/images/snowGoose1.jpg" alt="SnowGoose" class="img-thumbnail">
             <ul>
-                <% for(var i = 0; i < 1; i++) { %>
-                <li><h3>Name: <%= name[i] %><h3></li>
-                <li>Email: <%= email[i] %></li>
+                <% for(var i = 0; i < userinfo.length[i]-1; i++) { %>
+                <li><h3>Name: <%= userinfo.name[i] %><h3></li>
+                <li>Email: <%= userinfo.email[i] %></li>
                 <% } %>
             </ul>
             <a class="btn btn-primary center-block" href= "/pages/login" role= "button">UPDATE</a>
