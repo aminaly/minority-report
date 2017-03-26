@@ -78,5 +78,11 @@ label {
 }
 
 .card-img-top {
-    width = 200px;
+    width: 200px;
+}
+
+.card {
+    font-family: Helvetica;
+    text-align: left;
+    padding: 0px;
 }
