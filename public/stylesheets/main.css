@@ -76,3 +76,7 @@ label {
   border-color: #532F8C;
   border-width:1px;
 }
+
+.card-img-top {
+    width = 200px;
+}
