@@ -14,11 +14,13 @@
         <div class="col-md-3 col-md-offset-1"> 
             <img src="http://ninnescahlife.wichita.edu/sites/default/files/private/images/snowGoose1.jpg" alt="SnowGoose" class="img-thumbnail">
             <ul>
-                <li><h3>Name: <% userinfo.name[1] %><h3></li>
-                <li>Email: <% userinfo.email[1] %></li>
+                <% userinfo[1] (function(r) { %>
+                <li><h3>Name: <%= r.name %><h3></li>
+                <li>Email: <%= r.email %></li>
             </ul>
             <a class="btn btn-primary center-block" href= "/pages/login" role= "button">UPDATE</a>
         </div>
+        <% }); %>
 
         <!--Job Status-->
         <div class="col-md-6 col-md-offset-1">
