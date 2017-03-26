@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+  <!-- <% include ../partials/nav.ejs %> -->
+
+<div class="jumbotron text-center" id="main_landing">
+<!--LOGOS FOR DAYS -->
+  <!-- <a href="/" class="lang-logo">
+    <img src="/lang-logo.png">
+  </a> -->
+  <h1 id="comp_name">Minority Report</h1>
+  <p id="hero_desc">Connecting underrepresented prospects with startups.</p>
+  <a type="button" class="btn btn-lg btn-default" id="sign_up" onclick="beginSignUpFlow()">Sign Up</a>
+  <a type="button" class="btn btn-lg btn-default" id="log_in" onclick="beginSignUpFlow()">Log In</a>
+</div>
+
+<div class="jumbotron text-center" id="creds">
+  <h1>Sign Up</h1>
+
+  <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Upload Resumé</label>
+    <input type="file" id="exampleInputFile">
+  </div>
+  <div class="form-group">
+    <label for="skills">Skills</label>
+    <input type="skill" class="form-control" id="exampleInputEmail1" placeholder="Skills">
+  </div>
+  <div class="form-group">
+    <label for="industries">Industries</label>
+    <input type="industry" class="form-control" id="exampleInputPassword1" placeholder="Industries">
+  </div>  
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</div>
+
+</body>
+</html>
