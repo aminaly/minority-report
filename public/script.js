@@ -69,3 +69,9 @@ function beginSignUpFlow() {
     }, 1); // run every 0.1 second
   }, 0);
 }
+
+
+function redirect(){
+    window.location.replace("/recommendations");
+    return false;
+}
