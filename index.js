@@ -25,6 +25,11 @@ app.get('/', function(request, response) {
     response.render('pages/user-signup');
 });
 
+app.get('/recommendations', function(request, response) {
+    console.log("Signup print");
+    response.render('pages/db');
+});
+
 app.listen(app.get('port'), function() {
 });
 
