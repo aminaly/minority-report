@@ -72,6 +72,6 @@ function beginSignUpFlow() {
 
 
 function redirect(){
-    window.location.replace("/recommendations");
+    window.location("/recommendations");
     return false;
 }
