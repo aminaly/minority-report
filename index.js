@@ -31,19 +31,26 @@ app.listen(app.get('port'), function() {
 // db page. Get's data from test table
 app.get('/db', function (request, response) {
 
-    var userquery = 'SELECT * FROM users JOIN domain ON users.id = domain.user WHERE users.id = ' + userid;
-    pgcon(userquery, 'pages/db');
+    var userquery = 'SELECT * FROM users JOIN domain ON users.id = domain.user WHERE users.id = 1';
 
-});
-
-function pgcon(query, page) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-        client.query(query, function(err, result) {
+        client.query(userquery, function(err, result) {
             done();
             if(err)
             {console.error(err); response.sent("Error " + err); }
             else
-            { response.render(page, {results: result.rows} ); }
+            { response.render('pages/db', {results: result.rows} ); }
         });
     });
+<<<<<<< HEAD
 }
+=======
+});
+
+
+//var companyquery = 'SELECT id, domain FROM companies';
+//pgquery(userquery, 'pages/db');
+
+
+
+>>>>>>> parent of 4dacf8a... maybe?
