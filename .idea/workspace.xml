@@ -24,8 +24,13 @@
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="755">
               <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+=======
+            <state relative-caret-position="105">
+              <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+>>>>>>> parent of 4dacf8a... maybe?
 =======
             <state relative-caret-position="105">
               <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
@@ -357,7 +362,11 @@
       <option name="presentableId" value="Default" />
       <updated>1490408342091</updated>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1490408343463" duration="26781000" />
+=======
+      <workItem from="1490408343463" duration="26138000" />
+>>>>>>> parent of 4dacf8a... maybe?
 =======
       <workItem from="1490408343463" duration="26138000" />
 >>>>>>> parent of 4dacf8a... maybe?
@@ -366,7 +375,11 @@
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="26781000" />
+=======
+    <option name="totallyTimeSpent" value="26138000" />
+>>>>>>> parent of 4dacf8a... maybe?
 =======
     <option name="totallyTimeSpent" value="26138000" />
 >>>>>>> parent of 4dacf8a... maybe?
@@ -509,8 +522,13 @@
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state relative-caret-position="755">
           <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+=======
+        <state relative-caret-position="105">
+          <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+>>>>>>> parent of 4dacf8a... maybe?
 =======
         <state relative-caret-position="105">
           <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />

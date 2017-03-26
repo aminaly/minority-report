@@ -42,9 +42,6 @@ app.get('/db', function (request, response) {
             { response.render('pages/db', {results: result.rows} ); }
         });
     });
-<<<<<<< HEAD
-}
-=======
 });
 
 
@@ -52,5 +49,3 @@ app.get('/db', function (request, response) {
 //pgquery(userquery, 'pages/db');
 
 
-
->>>>>>> parent of 4dacf8a... maybe?
