@@ -3,7 +3,7 @@ var express = require('express');
 var pg = require('pg');
 var app = express();
 
-indico.apiKey =  '40bbea36abfef1d67b3a7befb0bf6c7c';
+//indico.apiKey =  '40bbea36abfef1d67b3a7befb0bf6c7c';
 var response = function(res) { console.log(res); };
 var logError = function(err) { console.log(err); };
 
