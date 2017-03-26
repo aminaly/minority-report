@@ -13,7 +13,7 @@
         <div class="col-md-3 col-md-offset-1"> 
             <img src="http://ninnescahlife.wichita.edu/sites/default/files/private/images/snowGoose1.jpg" alt="SnowGoose" class="img-thumbnail">
             <ul>
-                <% for(var i = 0; i < 1; i++) { %>
+                <% for(var i = 0; i < userinfo.length; i++) { %>
                 <li><h3>Name: <%= userinfo.name[i] %><h3></li>
                 <li>Email: <%= userinfo.email[i] %></li>
                 <% } %>
