@@ -42,8 +42,7 @@ function pgquery(querystring, page) {
             }
         });
     })
-};
-
+}
 
 // db page. Get's data from test table
 app.get('/db', function (request, response) {
@@ -54,3 +53,4 @@ app.get('/db', function (request, response) {
     pgquery(userquery, 'pages/db');
 
 });
+
