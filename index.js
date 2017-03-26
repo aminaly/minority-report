@@ -41,13 +41,16 @@ app.get('/db', function (request, response) {
 
 // call query
 function pgquery(querystring, page) {
-    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-        client.query(querystring, function(err, result) {
+    pg.connect(process.env.DATABASE_URL, function (err, client, done) {
+        client.query(querystring, function (err, result) {
             done();
-            if (err)
-            { console.error(err); response.send("Error " + err); }
-            else
-            {response.render(page, {userDom: result}); }
+            if (err) {
+                console.error(err);
+                response.send("Error " + err);
+            }
+            else {
+                response.render(page, {userDom: result});
+            }
         });
-    });
-}
+    })
+};
