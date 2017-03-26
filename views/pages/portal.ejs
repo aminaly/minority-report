@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/header.ejs %>
+</head>
+
+<body>
+<% include ../partials/nav.ejs %>
+
+<div class="container">   
+    <div class="row">
+
+        <!--User Info-->
+        <div class="col-md-3 col-md-offset-1"> 
+            <img src="http://ninnescahlife.wichita.edu/sites/default/files/private/images/snowGoose1.jpg" alt="SnowGoose" class="img-thumbnail">
+            <ul>
+                <li><h3>Name: ....<h3></li>
+                <li>Email: ....</li>
+            </ul>
+            <a class="btn btn-primary center-block" href= "/pages/login" role= "button">UPDATE</a>
+        </div>
+
+        <!--Job Status-->
+        <div class="col-md-6 col-md-offset-1">
+            <h3>Status</h3>
+             <table class="table-bordered">
+                 <tr>
+                     <th>Job ID</th> 
+                     <th>Application Status</th>
+                </tr>
+                <%  { %>
+                <tr>
+                    <td> <%= r. %> </td>
+                    <td> <%= r. %> </td>
+                </tr>
+                <% }); %>
+            </table>
+        </div>
+    </div>
+
+    <div class="row text-center" style="margin-top: 5em">
+        RECS WOULD GO HERE?
+    </div>
+
+    <div class="row text-center" style="margin-top: 5em">
+            <a class="btn btn-primary" href="/pages/recs" role="button">APPLY FOR MORE</a>
+    </div>
+</div>
+</body>
+</html>
