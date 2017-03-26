@@ -1,5 +1,5 @@
 var express = require('express');
-var indico = require('indico.io');
+//var indico = require('indico.io');
 var pg = require('pg');
 var app = express();
 
@@ -32,20 +32,7 @@ app.listen(app.get('port'), function() {
 app.get('/db', function (request, response) {
 
     var userquery = 'SELECT * FROM users JOIN domain ON users.id = domain.user WHERE users.id = ' + userid;
-    pgcon(userquery, 'pages/db');
 
-});
-
-// portal page. Get's data from test table
-//app.get('/portal', function (request, response) {
-
-  //  var userquery = 'SELECT * FROM users WHERE users.id = ' + userid;
-  //  pgcon(userquery, 'pages/portal');
-
-//});
-
-// function for queries
-function pgcon(query, page) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
         client.query(userquery, function(err, result) {
             done();
@@ -55,7 +42,8 @@ function pgcon(query, page) {
             { response.render('pages/db', {results: result.rows} ); }
         });
     });
-}
+});
+
 
 //var companyquery = 'SELECT id, domain FROM companies';
 //pgquery(userquery, 'pages/db');
