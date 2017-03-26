@@ -30,27 +30,26 @@ app.listen(app.get('port'), function() {
 
 // call query
 function pgquery(querystring, page) {
-    pg.connect(process.env.DATABASE_URL, function (err, client, done) {
-        client.query(querystring, function (err, result) {
-            done();
-            if (err) {
-                console.error(err);
-                response.send("Error " + err);
-            }
-            else {
-                response.render(page, {userDom: result.rows});
-            }
-        });
-    })
+
 }
 
 // db page. Get's data from test table
 app.get('/db', function (request, response) {
 
     var userquery = 'SELECT * FROM users JOIN domain ON users.id = domain.user WHERE users.id = 1';
-    //var companyquery = 'SELECT id, domain FROM companies';
 
-    pgquery(userquery, 'pages/db');
-
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+        client.query(userquery, function(err, result) {
+            done();
+            if(err)
+            {console.error(err); response.sent("Error " + err); }
+            else
+            { response.render('pages/db', {results: result.rows} ); }
+        });
+    });
 });
+    //var companyquery = 'SELECT id, domain FROM companies';
+    //pgquery(userquery, 'pages/db');
+
+
 
