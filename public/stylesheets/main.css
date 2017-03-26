@@ -64,7 +64,15 @@ form {
   margin-left: 40%;
   margin-right: 40%;
 }
-
 .navbar {
     background: #532F8C;
+}
+label {
+  font-weight: bold;
+
+}
+
+.btn {
+  border-color: #532F8C;
+  border-width:1px;
 }
