@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% include ../partials/header.ejs %>
+    <% include ../partials/header.ejs %>
 </head>
 
 <body>
@@ -9,10 +9,10 @@
 <% include ../partials/nav.ejs %>
 
 <div class="container">
-<h2>Users</h2>
+    <h2>User-Company Domain Matches</h2>
 
     <ul>
-        <% results.forEach(function(r) { %>
+        <% userDom.forEach(function(r) { %>
         <li><%= r.name %> - <%= r.domain %></li>
         <% }); %>
     </ul>
