@@ -33,14 +33,6 @@ app.get('/recommendations', function(request, response) {
 app.listen(app.get('port'), function() {
 });
 
-$.post(
-                'https://apiv2.indico.io/relevance/batch',
-                JSON.stringify({
-                'api_key': "40bbea36abfef1d67b3a7befb0bf6c7c",
-                'data': result.rows['domain'],
-                'queries': ["Media"]
-                })).then(function(res) { console.log("res: " + res) });
-
 // db page. Get's data from test table
 app.get('/db', function (request, response) {
 
@@ -63,7 +55,7 @@ app.get('/db', function (request, response) {
 // portal page. Get's data from test table
 app.get('/portal', function (request, response) {
 
-    var userquery = 'SELECT * FROM users WHERE users.id = ' + userid;
+    var userquery = 'SELECT * FROM users JOIN applications ON users.id = applications.user WHERE users.id = ' + userid;
 
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
         client.query(userquery, function(err, result) {
