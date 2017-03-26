@@ -86,8 +86,10 @@ label {
 .card {
     font-family: Helvetica;
     padding: 0px;
+    background: white;
+    align-content: center;
 }
 
 .card-deck {
-    align-content: center;
+    align-content: left;
 }
