@@ -1,9 +1,7 @@
 var express = require('express');
-//var indico = require('indico.io');
 var pg = require('pg');
 var app = express();
 
-//indico.apiKey =  '40bbea36abfef1d67b3a7befb0bf6c7c';
 var response = function(res) { console.log(res); };
 var logError = function(err) { console.log(err); };
 
@@ -63,7 +61,7 @@ app.get('/portal', function (request, response) {
             if(err)
             {console.error(err); response.sent("Error " + err); }
             else
-            { response.render('pages/portal', {results: result.rows} ); }
+            { response.render('pages/portal', {userinfo: result.rows} ); }
         });
     });
 });
