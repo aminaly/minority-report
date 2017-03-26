@@ -39,7 +39,6 @@ app.get('/db', function (request, response) {
 
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
         client.query(userquery, function(err, result) {
-            console.log("result.rows: " + result.rows)
             done();
             if(err)
             {console.error(err); response.sent("Error " + err); }
@@ -55,7 +54,7 @@ app.get('/db', function (request, response) {
 app.get('/portal', function (request, response) {
 
     var userquery =
-        'SELECT * FROM users JOIN applications ON users.id = applications.user WHERE id = ' + userid;
+        'SELECT * FROM users JOIN applications ON users.id = applications.user WHERE users.id = ' + userid;
 
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
         client.query(userquery, function(err, result) {
@@ -63,8 +62,9 @@ app.get('/portal', function (request, response) {
             if(err)
             {console.error(err); response.sent("Error " + err); }
             else
-            { response.render('pages/portal', {userinfo: result.rows} );
-              console.log(result.rows);}
+            {
+                response.render('pages/portal', {results: result.rows} );
+            }
         });
     });
 });
