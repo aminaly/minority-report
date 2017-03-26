@@ -64,8 +64,9 @@ form {
   margin-left: 40%;
   margin-right: 40%;
 }
-.navbar {
+.nav {
     background: #532F8C;
+    text-color: lightgrey;
 }
 label {
   font-weight: bold;
