@@ -1,5 +1,5 @@
 var express = require('express');
-//var indico = require('indico.io');
+var indico = require('indico.io');
 var pg = require('pg');
 var app = express();
 
