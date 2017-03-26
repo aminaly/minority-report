@@ -62,7 +62,8 @@ app.get('/portal', function (request, response) {
             if(err)
             {console.error(err); response.sent("Error " + err); }
             else
-            { response.render('pages/portal', {userinfo: result.rows} ); }
+            { response.render('pages/portal', {userinfo: result.rows} );
+              console.log(result.rows);}
         });
     });
 });
