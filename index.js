@@ -31,8 +31,21 @@ app.listen(app.get('port'), function() {
 // db page. Get's data from test table
 app.get('/db', function (request, response) {
 
-    var userquery = 'SELECT * FROM users JOIN domain ON users.id = domain.user WHERE users.id = 1';
+    var userquery = 'SELECT * FROM users JOIN domain ON users.id = domain.user WHERE users.id = ' + userid;
+    pgcon(userquery, 'pages/db');
 
+});
+
+// portal page. Get's data from test table
+//app.get('/portal', function (request, response) {
+
+  //  var userquery = 'SELECT * FROM users WHERE users.id = ' + userid;
+  //  pgcon(userquery, 'pages/portal');
+
+//});
+
+// function for queries
+function pgcon(query, page) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
         client.query(userquery, function(err, result) {
             done();
@@ -42,8 +55,7 @@ app.get('/db', function (request, response) {
             { response.render('pages/db', {results: result.rows} ); }
         });
     });
-});
-
+}
 
 //var companyquery = 'SELECT id, domain FROM companies';
 //pgquery(userquery, 'pages/db');
