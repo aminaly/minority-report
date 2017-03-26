@@ -70,8 +70,3 @@ function beginSignUpFlow() {
   }, 0);
 }
 
-
-function redirect(){
-    window.location("/recommendations");
-    return false;
-}
