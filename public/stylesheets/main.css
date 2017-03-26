@@ -2,7 +2,7 @@ body {
     font-family: "Helvetica";
 }
 
-.a {
+a:link {
     text-color: #532F8C;
 }
 
