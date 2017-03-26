@@ -32,7 +32,7 @@ app.listen(app.get('port'), function() {
 app.get('/db', function (request, response) {
 
     var userquery = 'SELECT * FROM users JOIN domain ON users.id = domain.user WHERE users.id = 1';
-    var companyquery = 'SELECT id, domain FROM companies';
+    //var companyquery = 'SELECT id, domain FROM companies';
 
     pgquery(userquery, 'pages/db');
     //var companyResult = pgquery(companyquery);
@@ -41,7 +41,7 @@ app.get('/db', function (request, response) {
 
 // call query
 function pgquery(querystring, page) {
-    var x = pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
         client.query(querystring, function(err, result) {
             done();
             if (err)
@@ -50,6 +50,4 @@ function pgquery(querystring, page) {
             {response.render(page, {userDom: result}); }
         });
     });
-
-    console.log("This is x: " + x);
 }
