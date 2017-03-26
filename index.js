@@ -44,8 +44,18 @@ app.get('/db', function (request, response) {
     });
 });
 
+// portal page. Get's data from test table
+app.get('/portal', function (request, response) {
 
-//var companyquery = 'SELECT id, domain FROM companies';
-//pgquery(userquery, 'pages/db');
+    var userquery = 'SELECT * FROM users WHERE users.id = ' + userid;
 
-
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+        client.query(userquery, function(err, result) {
+            done();
+            if(err)
+            {console.error(err); response.sent("Error " + err); }
+            else
+            { response.render('pages/portal', {results: result.rows} ); }
+        });
+    });
+});
