@@ -44,7 +44,7 @@ app.get('/recommendations', function (request, response) {
             {console.error(err); response.sent("Error " + err); }
             else
             { 
-              response.render('pages/db', {results: result.rows} ); 
+              response.render('pages/recommendations', {results: result.rows} ); 
             }
         });
     });
