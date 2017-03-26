@@ -55,7 +55,8 @@ app.get('/db', function (request, response) {
 // portal page. Get's data from test table
 app.get('/portal', function (request, response) {
 
-    var userquery = 'SELECT * FROM users JOIN applications ON users.id = applications.user WHERE users.id = ' + userid;
+    var userquery =
+        'SELECT * FROM companies WHERE companies.domain IN (SELECT domain FROM domain WHERE domain.user = ' + userid;
 
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
         client.query(userquery, function(err, result) {
