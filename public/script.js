@@ -1,8 +1,11 @@
 function beginSignUpFlow() {
   // company_name = document.getElementById('hero_desc')
-  var text = document.getElementById('hero_desc');
+  var signup = document.getElementById('creds');
   var button = document.getElementById('sign_up');
   var login = document.getElementById('log_in');
+
+  signup.style.display = 'block';
+
   setTimeout(function() { // start a delay
     var text = document.getElementById('hero_desc');
     text.style.opacity = 1;

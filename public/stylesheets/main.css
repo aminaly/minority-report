@@ -48,9 +48,15 @@
   background: white;
   text-align: left;
   padding: 0px;
+  height: 80vh;
+  display: none;
 }
 
 #creds h1 {
   font-size: 36px;
   margin-left: 20px;
+}
+form {
+  margin-left: 40%;
+  margin-right: 40%;
 }
