@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% include ../partials/header.ejs %>
+    <% include ../partials/header.ejs %>
 </head>
 
 <body>
 
 <% include ../partials/nav.ejs %>
 
-<div class="container">
-<h2>Users</h2>
+<div class="jumbotron text-center" id="main_landing">
+    <h1 id="comp_name">Recommendations for You</h1>
+</div>
+<div class="card-deck">
+    <% results.forEach(function(r) { %>
+    <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src="https://pbs.twimg.com/profile_images/432540905396895744/UU6Qw2Qx.png" alt="Card image cap">
+        <ul>
 
-    <ul>
-        <% results.forEach(function(r) { %>
-        <li><%= r.name %> - <%= r.domain %></li>
-        <% }); %>
-    </ul>
-
+        </ul>
+        <div class="card-block">
+            <h4 class="card-title"><%r.company%></h4>
+            <p class="card-text">Location: <%r.location%></p>
+            <p class="card-text"> <%r.description%></p>
+            <a href="#" class="btn btn-primary">Apply</a>
+        </div>
+    </div>
+    <% }); %>
 </div>
 
+<a type="button" type="submit" class="btn btn-default" href="/recommendations">See More</a>
 </body>
 </html>
