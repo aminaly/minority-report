@@ -28,6 +28,14 @@ app.get('/', function(request, response) {
 app.listen(app.get('port'), function() {
 });
 
+$.post(
+                'https://apiv2.indico.io/relevance/batch',
+                JSON.stringify({
+                'api_key': "40bbea36abfef1d67b3a7befb0bf6c7c",
+                'data': result.rows['domain'],
+                'queries': ["Media"]
+                })).then(function(res) { console.log("res: " + res) });
+
 // db page. Get's data from test table
 app.get('/db', function (request, response) {
 
@@ -41,14 +49,7 @@ app.get('/db', function (request, response) {
             {console.error(err); response.sent("Error " + err); }
             else
             { 
-              $.post(
-                'https://apiv2.indico.io/relevance/batch',
-                JSON.stringify({
-                'api_key': "40bbea36abfef1d67b3a7befb0bf6c7c",
-                'data': result.rows['domain'],
-                'queries': ["Media"]
-                })).then(function(res) { console.log("res: " + res) });
-              response.render('pages/db', {results: res} ); 
+              response.render('pages/db', {results: result.rows} ); 
             }
         });
     });
