@@ -34,7 +34,8 @@ app.listen(app.get('port'), function() {
 // db page. Get's data from test table
 app.get('/db', function (request, response) {
 
-    var userquery = 'SELECT * FROM users JOIN domain ON users.id = domain.user WHERE users.id = ' + userid;
+    var userquery =
+        'SELECT * FROM companies WHERE companies.domain IN (SELECT domain FROM domain WHERE domain.user = ' + userid;
 
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
         client.query(userquery, function(err, result) {
@@ -54,7 +55,7 @@ app.get('/db', function (request, response) {
 app.get('/portal', function (request, response) {
 
     var userquery =
-        'SELECT * FROM companies WHERE companies.domain IN (SELECT domain FROM domain WHERE domain.user = ' + userid;
+        'SELECT * FROM users JOIN applications ON users.id = applications.user WHERE id = ' + userid;
 
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
         client.query(userquery, function(err, result) {
