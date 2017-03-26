@@ -28,17 +28,6 @@ app.get('/', function(request, response) {
 app.listen(app.get('port'), function() {
 });
 
-// db page. Get's data from test table
-app.get('/db', function (request, response) {
-
-    var userquery = 'SELECT * FROM users JOIN domain ON users.id = domain.user WHERE users.id = 1';
-    //var companyquery = 'SELECT id, domain FROM companies';
-
-    pgquery(userquery, 'pages/db');
-    //var companyResult = pgquery(companyquery);
-
-});
-
 // call query
 function pgquery(querystring, page) {
     pg.connect(process.env.DATABASE_URL, function (err, client, done) {
@@ -54,3 +43,14 @@ function pgquery(querystring, page) {
         });
     })
 };
+
+
+// db page. Get's data from test table
+app.get('/db', function (request, response) {
+
+    var userquery = 'SELECT * FROM users JOIN domain ON users.id = domain.user WHERE users.id = 1';
+    //var companyquery = 'SELECT id, domain FROM companies';
+
+    pgquery(userquery, 'pages/db');
+
+});
