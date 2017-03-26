@@ -32,7 +32,11 @@ app.listen(app.get('port'), function() {
 app.get('/db', function (request, response) {
 
     var userquery = 'SELECT * FROM users JOIN domain ON users.id = domain.user WHERE users.id = ' + userid;
+    var companyquery = 'SELECT id, domain FROM companies';
+
     pgcon(userquery, 'pages/db');
+    pgcon(companyquery, 'pages/db');
+
 
 });
 
@@ -48,7 +52,6 @@ function pgcon(query, page) {
     });
 }
 
-//var companyquery = 'SELECT id, domain FROM companies';
 //pgquery(userquery, 'pages/db');
 
 
