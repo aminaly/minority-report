@@ -35,23 +35,20 @@ app.get('/db', function (request, response) {
     var userquery = 'SELECT * FROM users JOIN domain ON users.id = domain.user WHERE users.id = 1';
     var companyquery = 'SELECT id, domain FROM companies';
 
-    var userResult = pgquery(userquery);
-    console.log("User Result: " + userResult);
-    console.log("Direct log: " + pgquery(userquery));
-    var companyResult = pgquery(companyquery);
-    response.render('pages/db', {userDom: userResult, companyDom : companyResult});
+    pgquery(userquery, 'pages/db');
+    //var companyResult = pgquery(companyquery);
+
 });
 
 // call query
-function pgquery(querystring) {
+function pgquery(querystring, page) {
     var x = pg.connect(process.env.DATABASE_URL, function(err, client, done) {
         client.query(querystring, function(err, result) {
             done();
             if (err)
             { console.error(err); response.send("Error " + err); }
             else
-            { console.log("Log within function: " + result.rows);
-            return result.rows; }
+            {response.render(page, {userDom: userResult}); }
         });
     });
 
